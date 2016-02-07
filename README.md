@@ -19,3 +19,10 @@ culour.addstr(window, "colored string")
 ```
 
 And your string will be added to the screen nice and colored.
+
+To print to a specific place in the screen, use:
+```python
+culour.addstr(window, y, x, "colored string")
+```
+
+Don't forget to initialize the color usage in your curses window by calling ```curses.start_color()``` immediately after ```curses.initscr()```
