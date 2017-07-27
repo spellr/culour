@@ -1,4 +1,4 @@
-cuolour: color in curses
+culour: color in curses
 ========================
 
 .. image:: https://img.shields.io/pypi/v/culour.svg
