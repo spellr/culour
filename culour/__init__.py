@@ -1,3 +1,3 @@
-from culour import addstr
+from .culour import addstr
 
 __all__ = ["addstr"]
