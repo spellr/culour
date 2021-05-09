@@ -27,7 +27,7 @@ def _get_color(fg, bg):
     key = (fg, bg)
     if key not in COLOR_PAIRS_CACHE:
         # Use the pairs from 101 and after, so there's less chance they'll be overwritten by the user
-        pair_num = len(COLOR_PAIRS_CACHE) + 101
+        pair_num = len(COLOR_PAIRS_CACHE) + 1
         curses.init_pair(pair_num, fg, bg)
         COLOR_PAIRS_CACHE[key] = pair_num
 
