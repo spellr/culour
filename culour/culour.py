@@ -5,21 +5,27 @@ COLOR_PAIRS_CACHE = {}
 
 
 class TerminalColors(object):
+    WHITE = '[97'
+    CYAN = '[96'
     MAGENTA = '[95'
     BLUE = '[94'
-    GREEN = '[92'
     YELLOW = '[93'
+    GREEN = '[92'
     RED = '[91'
+    BLACK = '[90'
     END = '[0'
 
 
 # Translates between the terminal notation of a color, to it's curses color number
 TERMINAL_COLOR_TO_CURSES = {
+    TerminalColors.BLACK: curses.COLOR_BLACK,
     TerminalColors.RED: curses.COLOR_RED,
     TerminalColors.GREEN: curses.COLOR_GREEN,
     TerminalColors.YELLOW: curses.COLOR_YELLOW,
     TerminalColors.BLUE: curses.COLOR_BLUE,
-    TerminalColors.MAGENTA: curses.COLOR_MAGENTA
+    TerminalColors.MAGENTA: curses.COLOR_MAGENTA,
+    TerminalColors.CYAN: curses.COLOR_CYAN,
+    TerminalColors.WHITE: curses.COLOR_WHITE
 }
 
 
