@@ -3,23 +3,29 @@
 import curses
 import culour
 
-
-class COLORS(object):
-    MAGENTA = '\033[95m'
-    BLUE = '\033[94m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    END = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-
 def test(stdscr):
-    string = "white{red}red{end}\nwhite{green}green{end}white".format(red=COLORS.RED,
-                                                                      green=COLORS.GREEN,
-                                                                      end=COLORS.END)
-    culour.addstr(stdscr, 10, 50, string)
+    # Create a string with all colors
+    string = ("default "
+              "{black}black{end} "
+              "{red}red{end} "
+              "{green}green{end} "
+              "{yellow}yellow{end} "
+              "{blue}blue{end} "
+              "{magenta}magenta{end} "
+              "{cyan}cyan{end} "
+              "{white}white{end} "
+              "default").format(black='\033[90m',
+                              red='\033[91m',
+                              green='\033[92m',
+                              yellow='\033[93m',
+                              blue='\033[94m',
+                              magenta='\033[95m',
+                              cyan='\033[96m',
+                              white='\033[97m',
+                              end='\033[0m')
+
+    # Add the string to the curses window
+    culour.addstr(stdscr, 10, 10, string)
     stdscr.getch()
 
 curses.wrapper(test)
